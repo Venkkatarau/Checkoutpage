@@ -21,23 +21,20 @@ import 'package:flutter_web_checkoutpage/flutter_web_checkoutpage.dart';
 <td>
 
 ```dart
-class FancyScreen extends StatelessWidget {  
-  const FancyScreen({Key? key}) : super(key: key);  
-  
-  @override  
-  Widget build(BuildContext context) {  
-    return Scaffold(  
-      body: Center(  
-        child: const FancyContainer(  
-          title: 'Hello World',  
-          color1: Colors.lightGreenAccent,  
-          color2: Colors.lightBlue,  
-          subtitle: 'This is a new package',  
-        ),  
-      ),  
-    );  
-  }  
+
+class _CheckoutPageState extends State<CheckoutPage> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child: Scaffold(
+      body: WebView(
+        initialUrl: widget.url,
+        javascriptMode: JavascriptMode.unrestricted,
+      ),
+    ));
+  }
 }
+
 ```
 
 
